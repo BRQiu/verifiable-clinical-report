@@ -1,0 +1,58 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  core:
+    name: 核心（零第三方依赖）
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # 故意不装任何第三方包 —— 核心路径必须能在纯标准库下跑通。
+      - name: 意图解析测试
+        run: python tests/test_intent.py
+
+      - name: 错误注入测试（7 类错误必须全部被检出）
+        run: python tests/test_verification.py
+
+      - name: 端到端（stub 后端，不加载模型）
+        run: python run.py --demo --backend stub
+
+  web:
+    name: Web 界面
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install fastapi uvicorn pydantic
+
+      - name: 服务能起来并响应
+        run: |
+          python web/server.py --port 8100 --backend stub &
+          for i in $(seq 1 40); do
+            sleep 1
+            if curl -sf http://127.0.0.1:8100/api/health > /dev/null; then
+              echo "health OK"; break
+            fi
+          done
+          curl -sf http://127.0.0.1:8100/api/health
+          curl -sf -X POST http://127.0.0.1:8100/api/analyze \
+            -H 'Content-Type: application/json' \
+            -d '{"source":"files","files":["samples/sample_report.csv"],"question":"看看血糖变化","backend":"stub"}' \
+            | head -c 300

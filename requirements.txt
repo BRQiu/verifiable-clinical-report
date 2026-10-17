@@ -1,0 +1,26 @@
+# 核心（stub 后端、清洗、分析、校验）不需要任何第三方依赖。
+#
+# 下面按用途分组，按需安装：
+#
+#   核心 + CLI        无
+#   Web 界面          pip install fastapi uvicorn pydantic
+#   本地模型          pip install torch transformers accelerate
+#   CSV 编码兜底（可选） pip install charset-normalizer
+#
+# 一次性装齐：
+#   pip install -r requirements.txt
+
+# ---- Web 界面 ----
+fastapi>=0.110
+uvicorn>=0.27
+pydantic>=2.5
+
+# ---- 本地模型（不需要就把这三行注释掉）----
+# 注意：PyPI 的 Windows 轮子是 CPU-only。要用 GPU 请从对应 CUDA 版本源安装，
+# 例如 RTX 50 系（Blackwell / sm_120）需要 cu128 及以上。
+# torch>=2.7
+# transformers>=4.51
+# accelerate>=0.26
+
+# ---- 可选 ----
+charset-normalizer>=3.0

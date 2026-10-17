@@ -1,0 +1,494 @@
+{
+  "_comment": "术语表 —— 指标的标准名、单位、别名、时间语义。别名用于把报告里的列名映射到标准指标。",
+  "metrics": {
+    "hba1c": {
+      "name": "糖化血红蛋白",
+      "unit": "%",
+      "temporal": "window_mean",
+      "window_days": 90,
+      "aliases": [
+        "糖化血红蛋白",
+        "糖化",
+        "HbA1c",
+        "HBA1C",
+        "hba1c",
+        "A1C",
+        "GHb",
+        "糖化血红素",
+        "Hemoglobin A1c",
+        "HemoglobinA1c",
+        "Hb A1c",
+        "Glycated hemoglobin",
+        "Glycohemoglobin"
+      ]
+    },
+    "glucose_fasting": {
+      "name": "空腹血糖",
+      "unit": "mmol/L",
+      "temporal": "instant",
+      "aliases": [
+        "空腹血糖",
+        "血糖(空腹)",
+        "FPG",
+        "FBG",
+        "空腹葡萄糖",
+        "葡萄糖(空腹)"
+      ]
+    },
+    "glucose_postprandial": {
+      "name": "餐后2小时血糖",
+      "unit": "mmol/L",
+      "temporal": "instant",
+      "aliases": [
+        "餐后2小时血糖",
+        "餐后血糖",
+        "2hPG",
+        "PBG",
+        "餐后2h血糖"
+      ]
+    },
+    "glucose_random": {
+      "name": "随机血糖",
+      "unit": "mmol/L",
+      "temporal": "instant",
+      "aliases": [
+        "随机血糖",
+        "GLU"
+      ]
+    },
+    "sbp": {
+      "name": "收缩压",
+      "unit": "mmHg",
+      "temporal": "instant",
+      "aliases": [
+        "收缩压",
+        "高压",
+        "SBP"
+      ]
+    },
+    "dbp": {
+      "name": "舒张压",
+      "unit": "mmHg",
+      "temporal": "instant",
+      "aliases": [
+        "舒张压",
+        "低压",
+        "DBP"
+      ]
+    },
+    "tc": {
+      "name": "总胆固醇",
+      "unit": "mmol/L",
+      "temporal": "instant",
+      "aliases": [
+        "总胆固醇",
+        "胆固醇",
+        "TC",
+        "CHOL"
+      ]
+    },
+    "tg": {
+      "name": "甘油三酯",
+      "unit": "mmol/L",
+      "temporal": "instant",
+      "aliases": [
+        "甘油三酯",
+        "TG",
+        "三酰甘油"
+      ]
+    },
+    "hdl": {
+      "name": "高密度脂蛋白胆固醇",
+      "unit": "mmol/L",
+      "temporal": "instant",
+      "aliases": [
+        "高密度脂蛋白胆固醇",
+        "高密度脂蛋白",
+        "HDL-C",
+        "HDL"
+      ]
+    },
+    "ldl": {
+      "name": "低密度脂蛋白胆固醇",
+      "unit": "mmol/L",
+      "temporal": "instant",
+      "aliases": [
+        "低密度脂蛋白胆固醇",
+        "低密度脂蛋白",
+        "LDL-C",
+        "LDL"
+      ]
+    },
+    "creatinine": {
+      "name": "肌酐",
+      "unit": "umol/L",
+      "temporal": "instant",
+      "aliases": [
+        "肌酐",
+        "血肌酐",
+        "Cr",
+        "CREA",
+        "SCr"
+      ]
+    },
+    "egfr": {
+      "name": "eGFR",
+      "unit": "mL/min/1.73m²",
+      "temporal": "instant",
+      "derived": true,
+      "formula": "CKD-EPI 2021",
+      "aliases": [
+        "eGFR",
+        "肾小球滤过率",
+        "估算肾小球滤过率",
+        "GFR"
+      ]
+    },
+    "ua": {
+      "name": "尿酸",
+      "unit": "umol/L",
+      "temporal": "instant",
+      "aliases": [
+        "尿酸",
+        "血尿酸",
+        "UA"
+      ]
+    },
+    "weight": {
+      "name": "体重",
+      "unit": "kg",
+      "temporal": "instant",
+      "aliases": [
+        "体重",
+        "重量",
+        "WT",
+        "Weight"
+      ]
+    },
+    "bmi": {
+      "name": "BMI",
+      "unit": "kg/m²",
+      "temporal": "instant",
+      "derived": true,
+      "aliases": [
+        "BMI",
+        "体质指数",
+        "身体质量指数"
+      ]
+    },
+    "waist": {
+      "name": "腰围",
+      "unit": "cm",
+      "temporal": "instant",
+      "aliases": [
+        "腰围",
+        "WC"
+      ]
+    },
+    "hemoglobin": {
+      "name": "血红蛋白",
+      "unit": "g/dL",
+      "temporal": "instant",
+      "aliases": [
+        "血红蛋白",
+        "Hemoglobin",
+        "Hgb",
+        "Hb",
+        "haemoglobin"
+      ]
+    },
+    "potassium": {
+      "name": "血钾",
+      "unit": "mEq/L",
+      "temporal": "instant",
+      "aliases": [
+        "血钾",
+        "钾",
+        "Potassium",
+        "Serum potassium",
+        "K"
+      ]
+    },
+    "sodium": {
+      "name": "血钠",
+      "unit": "mEq/L",
+      "temporal": "instant",
+      "aliases": [
+        "血钠",
+        "钠",
+        "Sodium",
+        "Serum sodium",
+        "Na"
+      ]
+    },
+    "heart_rate": {
+      "name": "心率",
+      "unit": "bpm",
+      "temporal": "instant",
+      "aliases": [
+        "心率",
+        "Heart rate",
+        "Pulse",
+        "HR"
+      ]
+    },
+    "resp_rate": {
+      "name": "呼吸频率",
+      "unit": "breaths/min",
+      "temporal": "instant",
+      "aliases": [
+        "呼吸频率",
+        "Respiratory rate",
+        "RR"
+      ]
+    },
+    "spo2": {
+      "name": "血氧饱和度",
+      "unit": "%",
+      "temporal": "instant",
+      "aliases": [
+        "血氧饱和度",
+        "血氧",
+        "Oxygen saturation",
+        "SpO2",
+        "SaO2"
+      ]
+    },
+    "platelets": {
+      "name": "血小板",
+      "unit": "10³/µL",
+      "temporal": "instant",
+      "aliases": [
+        "血小板",
+        "Platelets",
+        "PLT"
+      ]
+    },
+    "wbc": {
+      "name": "白细胞",
+      "unit": "10³/µL",
+      "temporal": "instant",
+      "aliases": [
+        "白细胞",
+        "White blood cell count",
+        "WBC",
+        "Leukocytes"
+      ]
+    },
+    "bnp": {
+      "name": "BNP",
+      "unit": "pg/mL",
+      "temporal": "instant",
+      "aliases": [
+        "BNP",
+        "B-type natriuretic peptide",
+        "脑钠肽"
+      ]
+    }
+  },
+  "generic_terms": {
+    "_comment": "笼统说法 —— 不该静默解析成某一个具体指标，而应展开成全部候选，由数据可用性筛掉。医生只说「血糖」时，系统不该私自认定他指的是空腹还是随机。",
+    "血糖": [
+      "glucose_fasting",
+      "glucose_postprandial",
+      "glucose_random"
+    ],
+    "葡萄糖": [
+      "glucose_fasting",
+      "glucose_postprandial",
+      "glucose_random"
+    ],
+    "血脂": [
+      "tc",
+      "tg",
+      "hdl",
+      "ldl"
+    ],
+    "血压": [
+      "sbp",
+      "dbp"
+    ],
+    "肾功能": [
+      "creatinine",
+      "egfr",
+      "ua"
+    ],
+    "胆固醇": [
+      "tc",
+      "hdl",
+      "ldl"
+    ]
+  },
+  "unit_conversions": {
+    "_comment": "统一到内部单位。因子 = 内部单位下的值 / 原始单位下的值",
+    "glucose_mgdl_to_mmoll": {
+      "metric_group": [
+        "glucose_fasting",
+        "glucose_postprandial",
+        "glucose_random"
+      ],
+      "from": "mg/dL",
+      "factor": 0.0555
+    },
+    "hba1c_ifcc_to_ngsp": {
+      "metric_group": [
+        "hba1c"
+      ],
+      "from": "mmol/mol",
+      "factor": null,
+      "note": "非线性：(IFCC/10.929)+2.15"
+    },
+    "creatinine_mgdl_to_umoll": {
+      "metric_group": [
+        "creatinine"
+      ],
+      "from": "mg/dL",
+      "factor": 88.4
+    },
+    "tc_mgdl_to_mmoll": {
+      "metric_group": [
+        "tc",
+        "hdl",
+        "ldl"
+      ],
+      "from": "mg/dL",
+      "factor": 0.0259
+    },
+    "tg_mgdl_to_mmoll": {
+      "metric_group": [
+        "tg"
+      ],
+      "from": "mg/dL",
+      "factor": 0.0113
+    },
+    "ua_mgdl_to_umoll": {
+      "metric_group": [
+        "ua"
+      ],
+      "from": "mg/dL",
+      "factor": 59.48
+    },
+    "waist_in_to_cm": {
+      "metric_group": [
+        "waist"
+      ],
+      "from": "in",
+      "factor": 2.54
+    },
+    "weight_lb_to_kg": {
+      "metric_group": [
+        "weight"
+      ],
+      "from": "lb",
+      "factor": 0.4536
+    },
+    "cells_to_10e3_0": {
+      "metric_group": [
+        "wbc",
+        "platelets"
+      ],
+      "from": "/uL",
+      "factor": 0.001,
+      "note": "12,000/µL = 12 ×10³/µL；少这个因子数值会差 1000 倍却依然合理"
+    },
+    "cells_to_10e3_1": {
+      "metric_group": [
+        "wbc",
+        "platelets"
+      ],
+      "from": "/µL",
+      "factor": 0.001,
+      "note": "12,000/µL = 12 ×10³/µL；少这个因子数值会差 1000 倍却依然合理"
+    },
+    "cells_to_10e3_2": {
+      "metric_group": [
+        "wbc",
+        "platelets"
+      ],
+      "from": "/mm3",
+      "factor": 0.001,
+      "note": "12,000/µL = 12 ×10³/µL；少这个因子数值会差 1000 倍却依然合理"
+    },
+    "cells_to_10e3_3": {
+      "metric_group": [
+        "wbc",
+        "platelets"
+      ],
+      "from": "/mm³",
+      "factor": 0.001,
+      "note": "12,000/µL = 12 ×10³/µL；少这个因子数值会差 1000 倍却依然合理"
+    },
+    "cells_to_10e3_4": {
+      "metric_group": [
+        "wbc",
+        "platelets"
+      ],
+      "from": "cells/uL",
+      "factor": 0.001,
+      "note": "12,000/µL = 12 ×10³/µL；少这个因子数值会差 1000 倍却依然合理"
+    },
+    "cells_to_10e3_5": {
+      "metric_group": [
+        "wbc",
+        "platelets"
+      ],
+      "from": "cells/µL",
+      "factor": 0.001,
+      "note": "12,000/µL = 12 ×10³/µL；少这个因子数值会差 1000 倍却依然合理"
+    },
+    "cells_to_10e3_6": {
+      "metric_group": [
+        "wbc",
+        "platelets"
+      ],
+      "from": "cells/mm3",
+      "factor": 0.001,
+      "note": "12,000/µL = 12 ×10³/µL；少这个因子数值会差 1000 倍却依然合理"
+    },
+    "cells_caret": {
+      "metric_group": [
+        "wbc",
+        "platelets"
+      ],
+      "from": "/mm^3",
+      "factor": 0.001
+    },
+    "creatinine_mgl_to_umoll": {
+      "metric_group": [
+        "creatinine"
+      ],
+      "from": "mg/L",
+      "factor": 8.84
+    }
+  },
+  "chart_groups": {
+    "_comment": "可合并到同一张图的指标组。前提是内部单位相同。收缩压/舒张压本来就是同一次测量的两个值，分开画是错的。",
+    "blood_pressure": {
+      "name": "血压",
+      "members": [
+        "sbp",
+        "dbp"
+      ],
+      "unit": "mmHg"
+    },
+    "lipid_panel": {
+      "name": "血脂",
+      "members": [
+        "tc",
+        "tg",
+        "hdl",
+        "ldl"
+      ],
+      "unit": "mmol/L"
+    },
+    "glucose": {
+      "name": "血糖",
+      "members": [
+        "glucose_fasting",
+        "glucose_postprandial",
+        "glucose_random"
+      ],
+      "unit": "mmol/L"
+    }
+  }
+}
