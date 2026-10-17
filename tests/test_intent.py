@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-"""验证意图解析修好了：不再因为别名互相包含而分析医生没问的指标。"""
+"""验证意图解析：不再因为别名互相包含而分析医生没问的指标。"""
 import json
+import os
 import sys
 
-sys.path.insert(0, r"D:\projects\项目5")
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app.llm import StubBackend  # noqa: E402
 from app.pipeline import load_terms  # noqa: E402
 
